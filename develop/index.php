@@ -9,7 +9,7 @@
 
 <body>
     <div>
-        <h1>mini Style</h1>
+        <h1>mini System</h1>
     </div>
     <div>
         <h2>TopPage</h2>
