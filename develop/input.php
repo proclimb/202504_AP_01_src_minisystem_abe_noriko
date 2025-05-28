@@ -68,7 +68,7 @@ session_destroy();
                 </div>
                 <div>
                     <label>ふりがな<span>必須</span></label>
-                    <input type="tex" name="kana" placeholder="例）やまだたろう" value="<?php echo $_POST['kana'] ?>">
+                    <input type="text" name="kana" placeholder="例）やまだたろう" value="<?php echo $_POST['kana'] ?>">
                     <?php if (isset($error_message['kana'])) { ?>
                         <div class="error-msg"><?php echo $error_message['kana'] ?></div>
                     <?php } ?>
