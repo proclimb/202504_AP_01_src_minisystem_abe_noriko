@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'post') {
         'tel'      => $_POST['tel'],
         'email'    => $_POST['email'],
         'birthday' => $_POST['birthday'],
-        'gender'   => $_POST['gender'],
+        'gender'   => $_POST['gender']
     ];
 }
 
