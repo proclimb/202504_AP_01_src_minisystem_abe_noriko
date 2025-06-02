@@ -2,7 +2,7 @@
 require_once 'db.php';
 require_once 'user.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'post') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date = [
         'name'     => $_POST['name'],
         'kana'     => $_POST['kana'],
