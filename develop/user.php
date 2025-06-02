@@ -8,18 +8,18 @@ class user
         $this->pdo = $pdo;
     }
 
-    public function create($date)
+    public function create($data)
     {
         $sql = "INSERT INTO users (name, kana, email, tel, gender, create_dt)
-                VALUES (:name, :kana, :email, :tel, :gender, now())"
+                VALUES (:name, :kana, :email, :tel, :gender, now())";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
             ':name'     => $data['name'],
             ':kana'     => $data['kana'],
             ':email'     => $data['email'],
             ':tel'     => $data['tel'],
-            ':gender'     => $data['gender'],
-]);
+            ':gender'     => $data['gender']
+        ]);
     }
 
     public function findById($id)
@@ -46,19 +46,19 @@ class user
     }
     public function search($keyword = '')
     {
-if($keyword) {
-    $stmt = $this->pdo->prepare("SELECT * FROM users WHERE name LIKE ?");
-$stmt->execute(["%{$keyword}%"]);
-}else{
-$stmt = this->pdo->query("SELECT * FORM users");
-}
-return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($keyword) {
+            $stmt = $this->pdo->prepare("SELECT * FROM users WHERE name LIKE ?");
+            $stmt->execute(["%{$keyword}%"]);
+        } else {
+            $stmt = $this->pdo->query("SELECT * FROM users");
+        }
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function delete($id)
     {
         $sql = "DELETE FROM users WHERE id = id";
-        $stmt = $this->dpo->prepare\($sql);
+        $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([':id' => $id]);
     }
 }
