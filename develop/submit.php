@@ -3,7 +3,7 @@ require_once 'db.php';
 require_once 'user.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $date = [
+    $data = [
         'name'     => $_POST['name'],
         'kana'     => $_POST['kana'],
         'tel'      => $_POST['tel'],
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $user = new User($pdo);
 
-$user->create($date);
+$user->create($data);
 
 ?>
 <!DOCTYPE html>
