@@ -13,16 +13,16 @@ if (!empty($_POST) && empty($_SESSION['input_data'])) {
     } elseif (preg_match('/[^ぁ-ん－]/u', $_POST['kana'])) {
         $error_message['kana'] = 'ひらがなを入れて下さい';
     }
-    $reg_ste = "/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@[A-Za-z0-9_-]+.[A-Za-z0-9]+$/";
+    $reg_str = "/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@[A-Za-z0-9_-]+.[A-Za-z0-9]+$/";
 
     if (empty(['email'])) {
         $error_message['email'] = 'メールアドレスが入力されていません';
-    } elseif (!preg_match($reg_ste, $POST['email'])) {
+    } elseif (!preg_match($reg_str, $_POST['email'])) {
         $error_message['email'] = 'メールアドレスが正しくありません';
     }
 
     $reg_str = "/^[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}$/";
-    if (empty($_post['tel'])) {
+    if (empty($_POST['tel'])) {
         $error_message['tel'] = '電話番号が入力されていません';
     } elseif (!preg_match($reg_str, $_POST['tel'])) {
         $error_message['tel'] = '電話番号が違います';
@@ -43,7 +43,7 @@ session_destroy();
 
 <head>
     <meta charset="UTF-8">
-    <title>misi System</title>
+    <title>mini System</title>
     <link rel="stylesheet" href="style_new.css">
 </head>
 
@@ -84,7 +84,7 @@ session_destroy();
                     <label>電話番号<span>必須</span></label>
                     <input type="text" name="tel" placeholder="例) 000-000-0000" value="<?php echo $_POST['tel'] ?>">
                     <?php if (isset($error_message['tel'])) { ?>
-                        <div class="error_msg"><?php echo $error_message['tel'] ?></div>
+                        <div class="error-msg"><?php echo $error_message['tel'] ?></div>
                     <?php } ?>
                 </div>
                 <div>
