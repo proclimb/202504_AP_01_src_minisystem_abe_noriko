@@ -16,12 +16,12 @@ $result = $user->search($keyword);
 </head>
 
 <body>
-    <dvi>
+    <div>
         <h1>mini System</h1>
-    </dvi>
-    <dvi>
+    </div>
+    <div>
         <h2>ダッシュボード</h2>
-    </dvi>
+    </div>
     <?php if ($result) { ?>
         <table border="1" width="100%">
             <tr>
