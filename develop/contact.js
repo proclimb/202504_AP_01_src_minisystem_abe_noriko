@@ -57,7 +57,7 @@ var errorElement = function (form, msg) {
 
 var removeElementsByClass = function (className) {
     var elements = document.getElementsByClassName(className);
-    while (elements, length > 0) {
+    while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
     }
 }
