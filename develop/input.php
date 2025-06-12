@@ -15,7 +15,7 @@ if (!empty($_POST) && empty($_SESSION['input_data'])) {
     }
     $reg_str = "/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@[A-Za-z0-9_-]+.[A-Za-z0-9]+$/";
 
-    if (empty(['email'])) {
+    if (empty($_POST['email'])) {
         $error_message['email'] = 'メールアドレスが入力されていません';
     } elseif (!preg_match($reg_str, $_POST['email'])) {
         $error_message['email'] = 'メールアドレスが正しくありません';
